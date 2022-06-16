@@ -1,0 +1,141 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+body{
+  background-color: #f0f3f7;
+}
+.container-fixd{
+  width: 1240px;
+  margin: auto;
+}
+@media screen and (max-width: 1240px) {
+  .container-fixd{
+    width: 90%;
+  }
+}
+
+/* .header-fixd */
+.header-fixd{
+  background-color: #6435c9;
+  color: #fff;
+  padding: 60px 0;
+  position: relative;
+}
+.title-fixd{
+  font-size: 30px;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+}
+.home-fixd{
+  display: none;
+  font-size: 18px;
+  color: #fff;
+  margin-top: 12px;
+  font-size: 19px;
+  cursor: pointer;
+  padding: 5px;
+}
+.sup-title-fixd{
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #efb316;
+  display: block;
+}
+.sup-title-fixd div{
+  display: inline;
+}
+.icon-fixd{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 49%;
+  top: 105%;
+  width: 100%;
+  color: #9a9a9a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  max-width: 450px;
+  margin: auto;
+}
+button {
+  background-color: transparent;
+  outline: none;
+  border:none ;
+}
+.custom-fixd{
+  width: 30px;
+  height: 30px;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  color: #6435c9;
+  margin-bottom: 3%;
+  box-shadow:  0px 9px 15px 0 #ddd;
+  cursor: pointer;
+}
+/* mediun screen */
+@media screen and (max-width: 840px) {
+  .icon-fixd{
+    bottom: -23%;
+  }
+}
+/* mobile style (small screen)*/
+@media screen and (max-width: 420px) {
+  .home-fixd{
+    display: block;
+  }
+  .sup-title-fixd{
+    transform: translateY(-33px);
+  }
+  .header-fixd{
+    padding: 12% 0;
+  }
+  .title-fixd{
+    font-size: 23px;
+  }
+  .icon-fixd{
+    bottom: -20%;
+  }
+  .icon-fixd{    
+    max-width: 300px;
+  }
+  .custom-fixd{
+    width: 25px;
+    height: 25px;
+    padding: 13px;
+  }
+}
+/* extra small */
+@media screen and (max-width: 270px) {
+  /* .header-fixd */
+  .title-fixd{
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .sup-title-fixd, .home-fixd{
+    margin-top: 8px;
+    font-size: 10px;
+  }
+  .icon-fixd{
+    bottom: -19%;
+    width: 90%;
+    justify-content: center;
+  }
+  .icon-fixd ul{    
+    max-width: 150px;
+  }
+  .icon-fixd ul li{
+    font-size: 9px;
+  }
+  .custom-fixd{
+    width: 17px;
+    height: 17px;
+    padding: 9px;
+  }
+}
