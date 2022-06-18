@@ -1,11 +1,11 @@
 <!-- 
 steaps for solution
-  [1] == remove all inline style
-  [2] == remove all classes
-  [3] == add my classes
-in the end:
-  -- remove my icon and add your icon
-  -- you can use same classes, In this componoet {<ng-template #mobileHeader> </ng-template>}
+  [1] == add this file in your project (main-style.css), and import it
+  [2] == remove all inline style with out, (style="opacity: .5;")
+  [3] == remove all classes, with out (class="circles")
+  [4] == add my classes
+  [5] == remove my icon and add your icon
+  [6] == you can delete the comment from your code 
 -->
 <!DOCTYPE html>
 <html>
@@ -13,8 +13,9 @@ in the end:
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- you can remove this link in the end -->
+    <!-- this link for icon you can remove it -->
     <link rel="stylesheet" href="all.min.css">
+    <!-- add this file in your project and import it-->
     <link rel="stylesheet" href="main-style.css">
     <title>page</title>
   </head>
@@ -63,46 +64,51 @@ in the end:
         <!-- add class "sup-title-fixd" -->
         <div class="sup-title-fixd" >
           <span *ngIf="schoolObj?.state; then showState else showCountry"></span>
-          <ng-template #showState><div class="sub header"><span>Shreveporat,</span></div></ng-template>
-          <ng-template #showCountry><div class="sub header"><span> LA</span></div></ng-template>
+          <ng-template #showState><div><span>Shreveporat,</span></div></ng-template>
+          <ng-template #showCountry><div><span> LA</span></div></ng-template>
         </div>
       </div>
       <div>
         <!-- add class icon-fixd -->
         <div class="icon-fixd">
             <ng-content *ngIf="user?.uid; then setSchoolEnabled else setSchoolDisabled"></ng-content>
-            <!-- <ng-template #setSchoolEnabled> -->
-              <!-- <div (click)="setSchool()" matTooltip="{{snackbarSetSchoolSignedIn}}" matTooltipPosition="before" >
+            <!-- <ng-template #setSchoolEnabled>
+              <div (click)="setSchool()" matTooltip="{{snackbarSetSchoolSignedIn}}" matTooltipPosition="before" >
                 <button style="opacity: .5;" [ngClass]="{'disabled': user?.schoolSet?.name == schoolObj?.name}">
+                  add class "custom-fixd"
                   <i class="violet pin icon custom-fixd"></i>
                   <i class="fa-brands fa-github custom-fixd"></i>
                 </button>
-                <div class="ui header" >Pin</div>
-              </div> -->
-            <!-- </ng-template> -->
-            <!-- <ng-template #setSchoolDisabled> -->
+                <div>Pin</div>
+              </div>
+            </ng-template> -->
+            <ng-template #setSchoolDisabled>
               <div (click)="setSchoolSnackbar()" matTooltip="Set as your school" matTooltipPosition="before" >
-                <button class="ui huge circular icon button">
+                <button>
+                  <!-- add class "custom-fixd" -->
                   <!-- <i class="violet pin icon custom-fixd"></i> -->
                   <i class="fa-brands fa-github custom-fixd"></i>
                 </button>
-                <div class="ui header" >Pin</div>
+                <div>Pin</div>
               </div>
-            <!-- </ng-template> -->
-            <div (click)="openSchoolActivity()" matTooltip="View school activity" matTooltipPosition="below">
+            </ng-template>
+            <!-- center-fixd -->
+            <div class="center-fixd" (click)="openSchoolActivity()" matTooltip="View school activity" matTooltipPosition="below">
               <button>
+                <!-- add class "custom-fixd" -->
                 <!-- <i class="violet heartbeat icon custom-fixd"></i> -->
                 <i class="fa-brands fa-github custom-fixd"></i>
               </button>
-              <div class="ui header" >Activity</div>
+              <div>Activity</div>
             </div>
             <div (click)="openSchoolLeaderboard()" matTooltip="View school leaderboard" matTooltipPosition="after">
               <button>
+                <!-- add class "custom-fixd" -->
                 <!-- <i class="violet award icon custom-fixd"></i> -->
                 <i class="fa-brands fa-github custom-fixd"></i>
               </button>
               <!-- <div *ngIf="schoolObj?.leaderboardUsersCount > 0" matTooltip="Users pinning a school appear in the school's leaderboard" matTooltipPosition="after">{{schoolObj?.leaderboardUsersCount}}</div> -->
-              <div class="ui header" >Leaderboard</div>
+              <div>Leaderboard</div>
             </div>
         </div>
       </div>
@@ -110,7 +116,8 @@ in the end:
   </div>
 </ng-template>
 <!-- <ng-template #mobileHeader>
-  <div class="ui violet inverted segment" *ngIf="schoolExists" style="height: 200px; margin-bottom: 18%; padding-top: 16px; padding-bottom: 16px;">
+  add class "header-fixd"
+  <div class="header-fixd" *ngIf="schoolExists">
     Circles background
     <div>
       <ul class="circles">
@@ -126,65 +133,76 @@ in the end:
         <li></li>
       </ul>
     </div>
-    <div class="ui grid" style="padding-top: 16px;">
-      <div class="ui row" style="padding: 4px;">
-        <div class="ui sixteen wide center aligned column">
-          <h2 class="ui inverted header">
-            <div class="content" style="margin-top: 10%;">
-              {{schoolObj?.schoolNameDisplay}} 
-              <a class="ui yellow circular label" *ngIf="(user?.userRole == 'admin' || user?.userRole == 'super admin' || schoolObj?.currentOwnerUID == user?.uid)" (click)="editSchool()" matTooltip="Edit school" matTooltipPosition="below"><i class="pencil icon" style="margin-right: 0px;"></i></a>
+    add class "container-fixd"
+    <div class="container-fixd">
+      <div>
+        <div>
+          <h2>
+            add class "title-fixd"
+            <div class="title-fixd">
+              Louisiana State University Health Sciences Center-Shrveport 
+              <a *ngIf="(user?.userRole == 'admin' || user?.userRole == 'super admin' || schoolObj?.currentOwnerUID == user?.uid)" (click)="editSchool()" matTooltip="Edit school" matTooltipPosition="below"><i class="pencil icon"></i></a>
             </div>
           </h2>
         </div>
       </div>
-      <div class="ui centered row" style="padding: 0px;">
-        <div class="three wide center aligned column">
-          <i class="left arrow icon" (click)="navToHome()" style="cursor: pointer;" matTooltip="Go home" matTooltipPosition="below"></i>
+      <div>
+        add class "home-fixd"
+        <div class="home-fixd">
+          <i class="left arrow icon" (click)="navToHome()" matTooltip="Go home" matTooltipPosition="below"></i>
         </div>
-        <div class="nine wide center aligned column" >
+        add class "sup-title-fixd"
+        <div class="sup-title-fixd" >
           <span *ngIf="schoolObj?.state; then showState else showCountry"></span>
-          <ng-template #showState><div class="sub header"><span class="ui yellow text" style="font-family: Lato;">{{schoolObj?.city}}, {{schoolObj?.state}}</span></div></ng-template>
-          <ng-template #showCountry><div class="sub header"><span class="ui yellow text" style="font-family: Lato;">{{schoolObj?.city}}, {{schoolObj?.country}}</span></div></ng-template>
-        </div>
-        <div class="three wide column">
+          <ng-template #showState><div><span>Shreveporat,</span></div></ng-template>
+          <ng-template #showCountry><div><span> LA</span></div></ng-template>
         </div>
       </div>
-      <div class="ui centered row" style="margin-top: 0px; padding-top: 0px; position: absolute; transform: translateY(16vh);">
-        <div class="ui large very relaxed horizontal selection list">
-          <div class="item" style="padding-left: 8px; padding-right: 8px;">
-            <ng-content *ngIf="user?.uid; then setSchoolEnabled else setSchoolDisabled"></ng-content>
-            <ng-template #setSchoolEnabled>
-              <button class="ui huge circular icon button" (click)="setSchool()"  matTooltip="Set as your school" matTooltipPosition="below" [ngStyle]="{'opacity': user?.schoolSet?.name == schoolObj?.name ? '0.5' : 1}">
-                <i class="violet pin icon"></i>
-              </button>
-              <div class="ui header" >Pin</div>
-            </ng-template>
-            <ng-template #setSchoolDisabled>
-              <button class="ui huge circular icon button" style="opacity: 0.75;" matTooltip="Set as your school" matTooltipPosition="below">
-                <i class="violet pin icon"></i>
-              </button>
-              <div class="ui header" >Pin</div>
-            </ng-template>
-          </div>
-          <div class="item" style="padding-left: 8px; padding-right: 8px; margin-left: 16px; margin-right: 8px;">
-            <button class="ui huge circular icon button" (click)="openSchoolActivity()"  matTooltip="View school activity" matTooltipPosition="below">
-              <i class="violet heartbeat icon"></i>
+      <div>
+        add class icon-fixd
+        <div class="icon-fixd">
+          <ng-content *ngIf="user?.uid; then setSchoolEnabled else setSchoolDisabled"></ng-content>
+          <ng-template #setSchoolEnabled>
+            <button (click)="setSchool()"  matTooltip="Set as your school" matTooltipPosition="below" style="opacity: .5;" [ngStyle]="{'opacity': user?.schoolSet?.name == schoolObj?.name ? '0.5' : 1}">
+              add class " custom-fixd"
+              <i class="violet pin icon custom-fixd"></i>
+              <i class="fa-brands fa-github custom-fixd"></i>
             </button>
-            <div class="ui header" >Activity</div>
-          </div>
-          <div class="item" style="padding-left: 8px; padding-right: 8px;">
-            <button class="ui huge circular icon button" (click)="openSchoolLeaderboard()"  style="background-color: white; box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);" matTooltip="View school leaderboard" matTooltipPosition="below">
-              <i class="violet award icon"></i>
+            <div>Pin</div>
+          </ng-template>
+          <ng-template #setSchoolDisabled>
+            <button matTooltip="Set as your school" matTooltipPosition="below">
+              add class "custom-fixd"
+              <i class="violet pin icon custom-fixd"></i>
+              <i class="fa-brands fa-github custom-fixd"></i>
             </button>
-            <div class="ui circular label" *ngIf="schoolObj?.leaderboardUsersCount > 0" style="margin-left: -8px; margin-right: -8px;" matTooltip="Users pinning a school appear in the school's leaderboard" matTooltipPosition="below">{{schoolObj?.leaderboardUsersCount}}</div>
-            <div class="ui header" >Leaderboard</div>
+            <div>Pin</div>
+          </ng-template>
+          center-fixd
+          <div class="center-fixd">
+            <button (click)="openSchoolActivity()"  matTooltip="View school activity" matTooltipPosition="below">
+              add class "custom-fixd"
+              <i class="violet heartbeat icon custom-fixd"></i>
+              <i class="fa-brands fa-github custom-fixd"></i>
+            </button>
+            <div>Activity</div>
+          </div>
+          <div>
+            <button (click)="openSchoolLeaderboard()" matTooltip="View school leaderboard" matTooltipPosition="below">
+              add class "custom-fixd"
+              <i class="violet award icon custom-fixd"></i>
+              <i class="fa-brands fa-github custom-fixd"></i>
+            </button>
+            <div *ngIf="schoolObj?.leaderboardUsersCount 0" matTooltip="Users pinning a school appear in the school's leaderboard" matTooltipPosition="below"></div>
+            <div>Leaderboard</div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </ng-template> -->
-<!-- you can remove this link in the end -->
+
+<!-- this link for icon you can remove it -->
 <script src="all.min.js"></script>
 </body>
 </html>
