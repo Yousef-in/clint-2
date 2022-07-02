@@ -214,7 +214,7 @@ button {
 /* mobile style (small screen)*/
 @media screen and (max-width: 420px) {
   .home-fixd{
-    font-size: 12px;
+    font-size: 19px;
     padding: 7px 10px;
     gap: 3px;
   }
