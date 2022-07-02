@@ -146,6 +146,11 @@ body{
   line-height: 30px;
   color: #fff;
 }
+button {
+  background-color: transparent;
+  outline: none;
+  border:none ;
+}
 .home-fixd{
   border: solid 2px rgb(255 255 255 / 50%);
   color: #fff;
@@ -188,11 +193,6 @@ body{
   text-align: center;
   max-width: 450px;
   margin: auto;
-}
-button {
-  background-color: transparent;
-  outline: none;
-  border:none ;
 }
 .custom-fixd{
   width: 30px;
