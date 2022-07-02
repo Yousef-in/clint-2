@@ -28,11 +28,6 @@ body{
 /* .header-fixd */
 
 
-
-
-
-
-
 .circles{
   z-index: -1;
   position: absolute;
@@ -152,7 +147,7 @@ body{
   color: #fff;
 }
 .home-fixd{
-  box-shadow: 0 0 0 2px rgb(255 255 255 / 50%) inset;
+  box-shadow: 0 0 0 2px rgb(255 255 255 / 50%);
   color: #fff;
   margin-top: 12px;
   font-size: 19px;
@@ -166,7 +161,7 @@ body{
   transition:.3s ;
 }
 .home-fixd:hover{
-  box-shadow: 0 0 0 2px #fff inset;
+  box-shadow: 0 0 0 2px #fff;
 }
 .sup-title-fixd{
   text-align: center;
@@ -221,7 +216,7 @@ button {
 @media screen and (max-width: 420px) {
   .home-fixd{
     font-size: 12px;
-    padding: 8px 11px;
+    padding: 7px 10px;
     gap: 3px;
 
   }
