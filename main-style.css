@@ -152,20 +152,11 @@ button {
   border:none ;
 }
 .home-fixd{
-  border: solid 2px rgb(255 255 255 / 50%);
   color: #fff;
   margin-top: 12px;
   font-size: 19px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 15px;
-  border-radius: 150px;
-  gap: 6px;
-}
-.home-fixd:hover{
-  box-shadow: 0 0 0 2px #fff;
+  display: block
 }
 .sup-title-fixd{
   text-align: center;
@@ -214,17 +205,7 @@ button {
 /* mobile style (small screen)*/
 @media screen and (max-width: 420px) {
   .home-fixd{
-    border: solid 2px rgb(255 255 255 / 50%);
-    color: #fff;
-    margin-top: 12px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 150px;
     font-size: 12px;
-    padding: 7px 10px;
-    gap: 3px;
   }
   .sup-title-fixd{
     transform: translateY(-27px);
