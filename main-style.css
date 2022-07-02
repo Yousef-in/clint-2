@@ -147,7 +147,7 @@ body{
   color: #fff;
 }
 .home-fixd{
-  box-shadow: 0 0 0 2px rgb(255 255 255 / 50%);
+  border: solid 2px rgb(255 255 255 / 50%);
   color: #fff;
   margin-top: 12px;
   font-size: 19px;
