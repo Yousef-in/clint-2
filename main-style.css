@@ -214,7 +214,15 @@ button {
 /* mobile style (small screen)*/
 @media screen and (max-width: 420px) {
   .home-fixd{
-    font-size: 19px;
+    border: solid 2px rgb(255 255 255 / 50%);
+    color: #fff;
+    margin-top: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 150px;
+    font-size: 12px;
     padding: 7px 10px;
     gap: 3px;
   }
